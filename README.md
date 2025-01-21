@@ -140,10 +140,8 @@ Thread.sleep(2000);
 driver.findElement(By.xpath("//span[contains(text(),'Samsung 80 cm (32 
 inches) HD Ready Smart LED TV UA')]")).click();
 Thread.sleep(2000);
-// Store window id
 ArrayList<String> wid = new 
 ArrayList<String>(driver.getWindowHandles());
-// Switch the tab to latest tab
 driver.switchTo().window(wid.get(1));
 driver.findElement(By.xpath("//input[@id='add-to-cart-button']")).click();
 Thread.sleep(2000);
@@ -170,16 +168,12 @@ WebDriver driver = new ChromeDriver();
 driver.manage().window().maximize();
 driver.get("http://webdriveruniversity.com/Dropdown-CheckboxesRadioButtons/index.html");
 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-// Get count of CheckBoxes present
 List<WebElement> checkboxes = 
 driver.findElements(By.xpath("//input[@type='checkbox']"));
 System.out.println(checkboxes.size() + " Number of CheckBoxes");
-// Get count of Dropdown menus
 List<WebElement> dropdown = driver.findElements(By.tagName("select"));
 System.out.println(dropdown.size() + " Number of DropDown Menus");
-// Get count no’ of radio buttons
-List<WebElement>radioBtns = 
-driver.findElements(By.xpath("//input[@type='radio']"));
+List<WebElement>radioBtns = driver.findElements(By.xpath("//input[@type='radio']"));
 System.out.println(radioBtns.size() + " Number of Radio Buttons");
 driver.close();
 }
